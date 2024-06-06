@@ -5,7 +5,7 @@ const refoods = [{
   caraPengolahan: [
     {
       idPengolahan: 'olah-1',
-      teks: 'Pupuk dari Nasi Basi. Alat yang dibutuhkan: talenan, pisau, wadah atau baskom, toples atau wadah kecil, saringan, dan alat pengaduk. Bahan yang dibutuhkan: 500 ml air, 100 gr gula jawa, dan 200 gr nasi basi. Proses fermentasi: Siapkan wadah kecil, kepal nasi basi dan masukkan ke dalam wadah. Tutup wadah dan letakkan di tempat yang gelap selama 2-5 hari hingga nasi basi ditumbuhi jamur rizopus. Campurkan bahan: Siapkan baskom, masukkan 500 ml air, iris tipis gula jawa, dan larutkan dalam air. Masukkan nasi basi berjamur, aduk hingga rata. Masukkan campuran ke dalam botol 1,5 liter menggunakan corong. Diamkan 2-3 hari di tempat gelap. Gunakan pupuk dengan komposisi 100 ml pupuk organik dalam 10 liter air dan 50 ml gula jawa cair. Satu tanaman membutuhkan 200-300 ml pupuk organik cair.',
+      teks: 'Pupukk dari Nasi Basi. Alat yang dibutuhkan: talenan, pisau, wadah atau baskom, toples atau wadah kecil, saringan, dan alat pengaduk. Bahan yang dibutuhkan: 500 ml air, 100 gr gula jawa, dan 200 gr nasi basi. Proses fermentasi: Siapkan wadah kecil, kepal nasi basi dan masukkan ke dalam wadah. Tutup wadah dan letakkan di tempat yang gelap selama 2-5 hari hingga nasi basi ditumbuhi jamur rizopus. Campurkan bahan: Siapkan baskom, masukkan 500 ml air, iris tipis gula jawa, dan larutkan dalam air. Masukkan nasi basi berjamur, aduk hingga rata. Masukkan campuran ke dalam botol 1,5 liter menggunakan corong. Diamkan 2-3 hari di tempat gelap. Gunakan pupuk dengan komposisi 100 ml pupuk organik dalam 10 liter air dan 50 ml gula jawa cair. Satu tanaman membutuhkan 200-300 ml pupuk organik cair.',
       idUser: 'user-1',
       namaLengkap: 'Rizal',
       createdAt: '',
