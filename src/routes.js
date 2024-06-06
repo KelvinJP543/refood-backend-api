@@ -2,6 +2,9 @@ const {
   addRefoodHandler,
   getAllRefoodsHandler,
   getRefoodByIdHandler,
+  getAllUserHandler,
+  getUserByIdHandler,
+  addUserHandler,
   // editNoteByIdHandler,
   // deleteNoteByIdHandler,
 } = require('./handler');
@@ -22,6 +25,22 @@ const routes = [
     path: '/refood/{idLimbah}',
     handler: getRefoodByIdHandler,
   },
+  {
+    method: 'GET',
+    path: '/refood/user',
+    handler: getAllUserHandler,
+  },
+  {
+    method: 'GET',
+    path: '/refood/user/{idUser}',
+    handler: getUserByIdHandler,
+  },
+  {
+    method: 'POST',
+    path: '/refood/user/add',
+    handler: addUserHandler,
+  },
+
   // {
   //   method: 'PUT',
   //   path: '/notes/{id}',

@@ -1,5 +1,6 @@
 const { nanoid } = require('nanoid');
 const refoods = require('./refoods');
+const users = require('./users');
 
 const addRefoodHandler = (request, h) => {
   const { idLimbah } = request.params;
@@ -9,7 +10,7 @@ const addRefoodHandler = (request, h) => {
   // const updatedAt = createdAt;
 
   const newOlah = {
-    teks, idPengolahan, idUser, namaLengkap, createdAt,
+    idPengolahan, teks, idUser, namaLengkap, createdAt,
   };/* updatedAt */
 
   const refoodIndex = refoods.findIndex((refood) => refood.id_Limbah === idLimbah);
@@ -62,6 +63,69 @@ const getRefoodByIdHandler = (request, h) => {
     message: 'Jenis Limbah tidak ditemukan',
   });
   response.code(404);
+  return response;
+};
+
+const getAllUserHandler = () => ({
+  status: 'success',
+  data: {
+    users,
+  },
+});
+
+const getUserByIdHandler = (request, h) => {
+  const { idUser } = request.params;
+
+  const user = users.filter((n) => n.idUser === idUser)[0];
+
+  if (user !== undefined) {
+    return {
+      status: 'success',
+      data: {
+        user,
+      },
+    };
+  }
+
+  const response = h.response({
+    status: 'fail',
+    message: 'User tidak ditemukan',
+  });
+  response.code(404);
+  return response;
+};
+
+const addUserHandler = (request, h) => {
+  const { username, password, namaLengkap } = request.payload;
+  const idUser = nanoid(16);
+  // const createdAt = new Date().toISOString();
+  // const updatedAt = createdAt;
+
+  const newUser = {
+    idUser, username, password, namaLengkap,
+  };/* updatedAt */
+
+  const userExists = users.some((user) => user.idUser === idUser);
+
+  if (!userExists) {
+    users.push(newUser);
+
+    const response = h.response({
+      status: 'success',
+      message: 'User berhasil ditambahkan',
+      data: {
+        userId: idUser,
+      },
+    });
+    response.code(201);
+    return response;
+  }
+
+  const response = h.response({
+    status: 'fail',
+    message: 'User baru gagal ditambahkan',
+  });
+  response.code(500);
   return response;
 };
 
@@ -124,6 +188,9 @@ module.exports = {
   addRefoodHandler,
   getAllRefoodsHandler,
   getRefoodByIdHandler,
+  getAllUserHandler,
+  getUserByIdHandler,
+  addUserHandler,
   // editNoteByIdHandler,
   // deleteNoteByIdHandler,
 };
