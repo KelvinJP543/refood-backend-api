@@ -27,17 +27,17 @@ const routes = [
   },
   {
     method: 'GET',
-    path: '/refood/user',
+    path: '/user',
     handler: getAllUserHandler,
   },
   {
     method: 'GET',
-    path: '/refood/user/{idUser}',
+    path: '/user/{idUser}',
     handler: getUserByIdHandler,
   },
   {
     method: 'POST',
-    path: '/refood/user/add',
+    path: '/user/add',
     handler: addUserHandler,
   },
 
