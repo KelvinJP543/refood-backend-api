@@ -12,6 +12,9 @@ const init = async () => {
     },
   });
 
+  // eslint-disable-next-line global-require
+  await server.register(require('@hapi/inert'));
+
   server.route(routes);
 
   await server.start();
