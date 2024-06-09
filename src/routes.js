@@ -1,3 +1,4 @@
+const Path = require('path');
 const {
   addRefoodHandler,
   getAllRefoodsHandler,
@@ -5,8 +6,6 @@ const {
   getAllUserHandler,
   getUserByIdHandler,
   addUserHandler,
-  // editNoteByIdHandler,
-  // deleteNoteByIdHandler,
 } = require('./handler');
 
 const routes = [
@@ -40,17 +39,16 @@ const routes = [
     path: '/user/add',
     handler: addUserHandler,
   },
-
-  // {
-  //   method: 'PUT',
-  //   path: '/notes/{id}',
-  //   handler: editNoteByIdHandler,
-  // },
-  // {
-  //   method: 'DELETE',
-  //   path: '/notes/{id}',
-  //   handler: deleteNoteByIdHandler,
-  // },
+  {
+    method: 'GET',
+    path: '/img/{filename}',
+    handler: {
+      directory: {
+        path: Path.join(__dirname, '../img'),
+        redirectToSlash: true,
+      },
+    },
+  },
 ];
 
 module.exports = routes;
