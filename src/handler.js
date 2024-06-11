@@ -13,10 +13,10 @@ const addRefoodHandler = (request, h) => {
     idPengolahan, teks, idUser, namaLengkap, createdAt,
   };/* updatedAt */
 
-  const refoodIndex = refoods.findIndex((refood) => refood.id_Limbah === idLimbah);
+  const refoodIndex = refoods.findIndex((refood) => refood.idLimbah === idLimbah);
 
   if (refoodIndex !== -1) {
-    refoods[refoodIndex].cara_Pengolahan.push(newOlah);
+    refoods[refoodIndex].caraPengolahan.push(newOlah);
 
     const response = h.response({
       status: 'success',
